@@ -14,9 +14,28 @@ var io = socketIO(server);
 io.on('connection', (socket) => {
     console.log('new user connected');
     
+
+    
+    socket.on('createMessage', (message) => {
+        console.log('new', message);
+        io.emit('newMessage', {
+            from:message.from,
+            text:message.text,
+            createdAt:new Date().getTime()
+        });
+    });
+    
+    socket.emit('newMessage', {
+        from:'humam@gmail.com',
+        text:'hi there hello',
+        createAt:232
+    });
+    
 socket.on('disconnect', () =>{
     console.log('disconnected');
-})
+});
+
+
 });
 
 
