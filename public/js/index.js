@@ -2,10 +2,10 @@
             socket.on('connect', function() {
                 console.log('connected');
                 
-            socket.emit('createMessage', {
-                to:'fafa@gmail.com',
-                text:'hey  heye ey'
-            });
+            // socket.emit('createMessage', {
+            //     to:'fafa@gmail.com',
+            //     text:'hey  heye ey'
+            // });
                 
             });
             
