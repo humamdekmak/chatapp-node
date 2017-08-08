@@ -2,15 +2,31 @@
 <html>
     <head>
         <meta charset='utf-8'>
+        <link rel='stylesheet' href='/css/styles.css'>
     </head>
-    <body>
-        <h1>it works</h1>
+    <body class='chat'>
         
-        <ol id='messages'></ol>
-        <form id='message-form'>
-            <input name="message" type="text" placeholder="Message"/>
-            <button type='submit'>Send</button>
-        </form>
+        <div class='chat__sidebar'>
+            <h3>Users</h3>
+            <div id='users'></div>
+        </div>
+        
+        <div class='chat__main'>
+            <ol id='messages' class='chat__messages'></ol>
+            
+        <div class='chat__footer'>
+            <form id='message-form'>
+                <input name="message" type="text" placeholder="Message" autofocus autocomplete='off'/>
+                <button type='submit'>Send</button>
+            </form>
+            <button id="send-location">Send location</button>
+        </div>
+
+          
+            
+        </div>
+        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="/js/index.js">
